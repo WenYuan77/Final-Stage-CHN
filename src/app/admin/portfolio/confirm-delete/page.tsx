@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export default async function ConfirmDeletePage({
   searchParams,

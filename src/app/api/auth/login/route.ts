@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { verifyAdminPassword } from "@/lib/auth";
 
+export const runtime = "edge";
+
 const ADMIN_COOKIE = "admin_session";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
 

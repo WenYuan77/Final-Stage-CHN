@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { clearAdminSession } from "@/lib/auth";
 
+export const runtime = "edge";
+
 /** GET /admin/logout - clears session and redirects to homepage */
 export async function GET(request: NextRequest) {
   await clearAdminSession();

@@ -11,6 +11,8 @@ const DEFAULTS = {
   seo_keywords: ["photography", "Final Stage", "wedding photography", "portrait", "Seattle"],
 };
 
+export const runtime = "edge";
+
 export async function GET() {
   try {
     if (!isSupabaseConfigured()) {

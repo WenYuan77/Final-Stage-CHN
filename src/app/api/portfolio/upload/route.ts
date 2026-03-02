@@ -13,6 +13,8 @@ const ALLOWED_TYPES = [
 ];
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 
+export const runtime = "edge";
+
 function slugify(str: string): string {
   return str
     .replace(/\s+/g, "-")

@@ -2,6 +2,7 @@ import AdminSettingsForm from "./AdminSettingsForm";
 import { getSiteSettingsFull } from "@/lib/site-settings";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 const HERO_ERRORS: Record<string, string> = {
   "no-file": "Please select a file.",

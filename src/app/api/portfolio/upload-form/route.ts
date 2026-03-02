@@ -7,6 +7,8 @@ const BUCKET = "portfolio";
 const ALLOWED_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp", "image/gif"];
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 
+export const runtime = "edge";
+
 function slugify(str: string): string {
   return str
     .replace(/\s+/g, "-")

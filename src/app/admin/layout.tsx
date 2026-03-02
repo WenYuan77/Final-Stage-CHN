@@ -1,6 +1,8 @@
 import AdminNav from "./AdminNav";
 import AdminMain from "./AdminMain";
 
+export const runtime = "edge";
+
 export default function AdminLayout({
   children,
 }: {

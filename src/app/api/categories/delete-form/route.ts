@@ -3,6 +3,8 @@ import { createServerClient, isSupabaseConfigured } from "@/lib/supabase/server"
 import { isAdmin } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 
+export const runtime = "edge";
+
 export async function POST(request: NextRequest) {
   if (!(await isAdmin())) {
     return NextResponse.redirect(new URL("/admin/login", request.url));

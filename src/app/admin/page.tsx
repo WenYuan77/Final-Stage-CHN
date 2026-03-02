@@ -1,6 +1,8 @@
 import { getPortfolioData } from "@/lib/portfolio-data";
 import { getSiteSettings } from "@/lib/site-settings";
 
+export const runtime = "edge";
+
 export default async function AdminDashboardPage() {
   const [{ categories, images }, siteSettings] = await Promise.all([
     getPortfolioData(),

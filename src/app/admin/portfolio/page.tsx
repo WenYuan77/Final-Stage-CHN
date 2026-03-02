@@ -3,6 +3,7 @@ import UploadForm from "./UploadForm";
 import { getPortfolioData } from "@/lib/portfolio-data";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 const normalizedCat = (s: string) => (s || "").trim().toLowerCase();
 

@@ -2,6 +2,7 @@ import AdminCategoriesList from "./AdminCategoriesList";
 import { getPortfolioData } from "@/lib/portfolio-data";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export default async function AdminCategoriesPage({
   searchParams,

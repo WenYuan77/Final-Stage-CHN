@@ -13,6 +13,8 @@ const DEFAULT_CATEGORIES = [
   { id: "Events", label: "Events", sort_order: 7 },
 ];
 
+export const runtime = "edge";
+
 export async function GET() {
   try {
     if (!isSupabaseConfigured()) {

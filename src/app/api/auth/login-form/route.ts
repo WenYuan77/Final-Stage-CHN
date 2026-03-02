@@ -10,6 +10,8 @@ function getBaseUrl(request: NextRequest): string {
   return `${proto}://${forwardedHost ?? host}`;
 }
 
+export const runtime = "edge";
+
 export async function POST(request: NextRequest) {
   const baseUrl = getBaseUrl(request);
   const formData = await request.formData();

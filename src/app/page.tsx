@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import { getPortfolioData } from "@/lib/portfolio-data";
 import { getSiteSettings } from "@/lib/site-settings";
 
+export const runtime = "edge";
+
 export default async function Home() {
   const [{ categories, images }, siteSettings] = await Promise.all([
     getPortfolioData(),
