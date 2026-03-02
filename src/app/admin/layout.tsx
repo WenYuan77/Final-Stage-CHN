@@ -2,6 +2,7 @@ import AdminNav from "./AdminNav";
 import AdminMain from "./AdminMain";
 
 export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 export default function AdminLayout({
   children,

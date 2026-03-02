@@ -19,7 +19,12 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const res = NextResponse.next();
+  // Prevent caching admin pages so Server Action IDs stay in sync after redeploys
+  if (pathname.startsWith("/admin")) {
+    res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+  }
+  return res;
 }
 
 export const config = {

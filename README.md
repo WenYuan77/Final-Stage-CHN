@@ -49,11 +49,14 @@ Copy `.env.example` to `.env.local` and fill in:
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ADMIN_PASSWORD=your-secure-password
 ```
 
-For Netlify, add these in **Site settings → Environment variables**.
+- **NEXT_PUBLIC_SUPABASE_ANON_KEY** — From Supabase **Project Settings → API** → “anon” “public” key. Required for the public site to load portfolio and site settings in the browser (e.g. when using static export on Cloudflare). After adding it, run `supabase/policies-public-read.sql` in the SQL Editor so the anon key can read `site_settings`, `categories`, and `portfolio_images`.
+
+For Netlify/Cloudflare, add these in **Site settings → Environment variables**.
 
 ### 5. Migrate Existing Portfolio Images
 
@@ -84,10 +87,8 @@ Visit `/admin`, enter your `ADMIN_PASSWORD`, and manage:
 
 ## Deploy
 
-```bash
-npm run build
-npm start
-```
+- **Static export (e.g. Cloudflare Pages):** run `npm run build:static`. Deploy the generated `out` folder. Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the host’s environment variables. The admin panel is not included in this build; use `npm run dev` locally to manage content.
+- **Full app (Vercel, Netlify):** run `npm run build` and `npm start`, or connect the repo to the host. Add all env vars (including `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_PASSWORD`). The homepage still loads portfolio and site settings in the browser, so content updates appear without redeploying.
 
 Or deploy to [Vercel](https://vercel.com) or [Netlify](https://netlify.com). Add the environment variables in your hosting provider’s dashboard.
 
